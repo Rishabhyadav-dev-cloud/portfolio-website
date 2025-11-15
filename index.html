@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishabh Yadav - Software Developer & Azure Administrator</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+        }
+        /* Custom scrollbar styling for aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; /* primary */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #38bdf8; /* accent */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0ea5e9;
+        }
+
+        /* Keyframe for hero fade-in effect */
+        @keyframes fadeInHero {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeInHero {
+            animation: fadeInHero 1s ease-out forwards;
+        }
+
+        /* Scroll Reveal Effect Class */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition-delay: 0.1s; /* Subtle delay */
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <script>
+        // Configure Tailwind with custom colors
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0f172a', /* Slate 900 - Background */
+                        'secondary': '#1e293b', /* Slate 800 - Cards/Secondary BG */
+                        'accent': '#38bdf8', /* Sky 400 (Azure Blue) - Highlight */
+                        'text-light': '#f8fafc', /* Slate 50 - Main Text */
+                        'text-muted': '#94a3b8', /* Slate 400 - Muted Text */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-primary text-text-light">
+
+    <!-- Navigation Bar (Sticky) -->
+    <header class="sticky top-0 z-50 bg-secondary/90 backdrop-blur-sm shadow-xl">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-accent">Rishabh Yadav</a>
+            <!-- Desktop Links -->
+            <div class="space-x-8 hidden md:flex">
+                <a href="#about" class="text-text-muted hover:text-accent transition duration-300">About</a>
+                <a href="#skills" class="text-text-muted hover:text-accent transition duration-300">Skills</a>
+                <a href="#certs" class="text-text-muted hover:text-accent transition duration-300">Certifications</a>
+                <a href="#projects" class="text-text-muted hover:text-accent transition duration-300">Projects</a>
+                <a href="#education" class="text-text-muted hover:text-accent transition duration-300">Education</a>
+                <a href="#contact" class="text-text-muted hover:text-accent transition duration-300">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-text-light focus:outline-none p-2 rounded-lg hover:bg-slate-700 transition">
+                <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Links -->
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-slate-700 hover:text-accent transition duration-300">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-slate-700 hover:text-accent transition duration-300">Skills</a>
+                <a href="#certs" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-slate-700 hover:text-accent transition duration-300">Certifications</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-slate-700 hover:text-accent transition duration-300">Projects</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-slate-700 hover:text-accent transition duration-300">Education</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-text-light hover:bg-slate-700 hover:text-accent transition duration-300">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="py-20 sm:py-32 lg:py-40 text-center max-w-7xl mx-auto px-4">
+            <div class="animate-fadeInHero">
+                <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight text-text-light mb-4">
+                    Hello, I'm <span class="text-accent">Rishabh Yadav</span>
+                </h1>
+                <p class="text-xl sm:text-3xl text-text-muted mb-8 font-light">
+                    Software Developer & Certified <span class="text-accent font-semibold">Azure Administrator</span>
+                </p>
+                <a href="#contact" class="inline-block px-8 py-3 text-lg font-medium text-primary bg-accent rounded-lg shadow-lg shadow-accent/50 hover:bg-sky-300 transition duration-300 transform hover:scale-105">
+                    Get In Touch
+                </a>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-16 bg-secondary/50 rounded-lg shadow-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-10 text-accent">About Me </h2>
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-lg text-text-light mb-4">
+                    I am a **software developer** with a strong foundation in building reliable, scalable applications, complemented by hands-on experience in **Azure administration**. Along with developing applications, I actively manage, troubleshoot, and secure cloud environments, ensuring smooth deployment and efficient operations.
+                </p>
+                <p class="text-lg text-text-light">
+                    I enjoy working across both development and cloud infrastructure to deliver solutions that are modern, optimized, and business-focused.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent scroll-reveal">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Software Development -->
+                <div class="bg-secondary p-6 rounded-xl shadow-2xl border-t-4 border-accent scroll-reveal">
+                    <h3 class="text-2xl font-semibold mb-4 text-accent">Software Development</h3>
+                    <ul class="space-y-2 text-text-light">
+                        <li><span class="text-accent">&bullet;</span> C#</li>
+                        <li><span class="text-accent">&bullet;</span> Asp.Net Mvc and Asp.Net Core</li>
+                        <li><span class="text-accent">&bullet;</span> SQL Databases</li>
+                        <li><span class="text-accent">&bullet;</span> API</li>
+                        <li><span class="text-accent">&bullet;</span> Python</li>
+                    </ul>
+                </div>
+                <!-- Cloud & Infrastructure -->
+                <div class="bg-secondary p-6 rounded-xl shadow-2xl border-t-4 border-accent scroll-reveal">
+                    <h3 class="text-2xl font-semibold mb-4 text-accent">Cloud & Infrastructure</h3>
+                    <ul class="space-y-2 text-text-light">
+                        <!-- UPDATED: AZ-104 is In Progress -->
+                        <li><span class="text-accent">&bullet;</span> Microsoft Azure (AZ-104 - In Progress)</li>
+                        <li><span class="text-accent">&bullet;</span> Virtual Machines, VNETs, Storage</li>
+                        <li><span class="text-accent">&bullet;</span> Azure App Service & Functions</li>
+                        <li><span class="text-accent">&bullet;</span> Infrastructure as Code (Terraform)</li>
+                    </ul>
+                </div>
+                <!-- DevOps & Security -->
+                <div class="bg-secondary p-6 rounded-xl shadow-2xl border-t-4 border-accent scroll-reveal">
+                    <h3 class="text-2xl font-semibold mb-4 text-accent">DevOps & Security</h3>
+                    <ul class="space-y-2 text-text-light">
+                        <li><span class="text-accent">&bullet;</span> CI/CD Pipelines (Azure DevOps)</li>
+                        <li><span class="text-accent">&bullet;</span> Docker & Kubernetes</li>
+                        <li><span class="text-accent">&bullet;</span> Cloud Security Principles (SC-900)</li>
+                        </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certs" class="py-16 bg-secondary rounded-lg shadow-xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent scroll-reveal">Certifications</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <!-- Certification Card 1 (AZ-900) -->
+                <div class="w-full sm:w-60 p-4 bg-primary rounded-lg shadow-lg border border-accent/50 text-center transform hover:scale-105 transition duration-300 scroll-reveal">
+                    <div class="text-4xl text-accent mb-2">
+                        <span class="align-middle">☁️</span>
+                    </div>
+                    <p class="text-xl font-semibold text-text-light">AZ-900</p>
+                    <p class="text-sm text-text-muted">Microsoft Azure Fundamentals</p>
+                </div>
+                <!-- Certification Card 2 (SC-900) -->
+                <div class="w-full sm:w-60 p-4 bg-primary rounded-lg shadow-lg border border-accent/50 text-center transform hover:scale-105 transition duration-300 scroll-reveal" style="transition-delay: 0.1s;">
+                    <div class="text-4xl text-accent mb-2">
+                        <span class="align-middle">🔒</span>
+                    </div>
+                    <p class="text-xl font-semibold text-text-light">SC-900</p>
+                    <p class="text-sm text-text-muted">Microsoft Security, Compliance, and Identity Fundamentals</p>
+                </div>
+                <!-- Certification Card 3 (AZ-104) -->
+                <div class="w-full sm:w-60 p-4 bg-primary rounded-lg shadow-lg border border-accent/50 text-center transform hover:scale-105 transition duration-300 scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="text-4xl text-accent mb-2">
+                        <span class="align-middle">🛠</span>
+                    </div>
+                    <p class="text-xl font-semibold text-text-light">AZ-104</p>
+                    <!-- Status changed to In Progress -->
+                    <p class="text-sm font-semibold text-accent">In Progress</p>
+                </div>
+                <!-- Certification Card 4 (OCI Foundations) -->
+                <div class="w-full sm:w-60 p-4 bg-primary rounded-lg shadow-lg border border-accent/50 text-center transform hover:scale-105 transition duration-300 scroll-reveal" style="transition-delay: 0.3s;">
+                    <div class="text-4xl text-accent mb-2">
+                        <span class="align-middle">🛡</span>
+                    </div>
+                    <p class="text-xl font-semibold text-text-light">Oracle Cloud</p>
+                    <p class="text-sm text-text-muted">Certified in Oracle Cloud Infrastructure Foundations Associate </p>
+                </div>
+                <!-- Certification Card 5 (OCI AI) -->
+                <div class="w-full sm:w-60 p-4 bg-primary rounded-lg shadow-lg border border-accent/50 text-center transform hover:scale-105 transition duration-300 scroll-reveal" style="transition-delay: 0.4s;">
+                    <div class="text-4xl text-accent mb-2">
+                        <span class="align-middle">🤖</span> <!-- Changed icon for AI -->
+                    </div>
+                    <p class="text-xl font-semibold text-text-light">Oracle Cloud</p>
+                    <p class="text-sm text-text-muted">Certified in Oracle Cloud Infrastructure AI Foundations Associate </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent scroll-reveal">Selected Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: Scalable 3-Tier Azure Web App Deployment -->
+                <div class="bg-secondary rounded-xl shadow-2xl overflow-hidden border border-transparent hover:border-accent/70 transform hover:translate-y-[-5px] transition duration-300 scroll-reveal">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-text-light">Scalable 3-Tier Azure Architecture (DR & Governance)</h3>
+                        <p class="text-text-muted mb-4">Engineered and deployed a highly available 3-tier web application architecture on Azure, implementing **auto-scaling**, **security/governance** (using Azure Policy/NSGs), and complete **Business Continuity/DR** via **Azure Backup** and **Site Recovery**.</p>
+                        <span class="inline-block bg-accent/20 text-accent text-xs font-medium px-2.5 py-0.5 rounded-full mr-2">Azure</span>
+                        <span class="inline-block bg-accent/20 text-accent text-xs font-medium px-2.5 py-0.5 rounded-full mr-2">Disaster Recovery</span>
+                        <span class="inline-block bg-accent/20 text-accent text-xs font-medium px-2.5 py-0.5 rounded-full">Governance</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: Automated VMSS CI/CD -->
+                <div class="bg-secondary rounded-xl shadow-2xl overflow-hidden border border-transparent hover:border-accent/70 transform hover:translate-y-[-5px] transition duration-300 scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-text-light">Automated CI/CD for VM Scale Sets</h3>
+                        <p class="text-text-muted mb-4">Developed and implemented a continuous integration/continuous delivery (**CI/CD**) pipeline using **GitHub Actions** to automatically build, test, and deploy application updates to an **Azure Virtual Machine Scale Set (VMSS)**, ensuring zero-downtime rollouts.</p>
+                        <span class="inline-block bg-accent/20 text-accent text-xs font-medium px-2.5 py-0.5 rounded-full mr-2">GitHub Actions</span>
+                        <span class="inline-block bg-accent/20 text-accent text-xs font-medium px-2.5 py-0.5 rounded-full mr-2">Azure VMSS</span>
+                        <span class="inline-block bg-accent/20 text-accent text-xs font-medium px-2.5 py-0.5 rounded-full">DevOps</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: Azure DevTest Labs Setup & Governance -->
+                <div class="bg-secondary rounded-xl shadow-2xl overflow-hidden border border-transparent hover:border-accent/70 transform hover:translate-y-[-5px] transition duration-300 scroll-reveal" style="transition-delay: 0.4s;">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-text-light">Azure DevTest Labs Setup & Automation</h3>
+                        <p class="text-text-muted mb-4">Established a cost-controlled and governed **Azure DevTest Labs** environment, utilizing custom images and automated shutdown policies to facilitate rapid, self-service provisioning of development and testing environments, significantly reducing operational costs.</p>
+                        <span class="inline-block bg-accent/20 text-accent text-xs font-medium px-2.5 py-0.5 rounded-full mr-2">DevTest Labs</span>
+                        <span class="inline-block bg-accent/20 text-accent text-xs font-medium px-2.5 py-0.5 rounded-full mr-2">Automation</span>
+                        <span class="inline-block bg-accent/20 text-accent text-xs font-medium px-2.5 py-0.5 rounded-full">Cost Management</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section (NEWLY ADDED) -->
+        <section id="education" class="py-16 bg-secondary/50 rounded-lg shadow-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Education</h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Degree 1: BSc in CS -->
+                <div class="bg-primary p-6 rounded-xl shadow-xl border-l-4 border-accent">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-text-light">Bachelor of Science (B.Sc.) in Computer Science</h3>
+                            <p class="text-text-muted mt-1">Dr. Bhimrao Ambedkar University, Agra</p>
+                        </div>
+                        <span class="text-text-muted text-sm mt-2 sm:mt-0 whitespace-nowrap font-medium"></span>
+                    </div>
+                    <!-- Removed bulleted list content as requested -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-secondary/50 rounded-lg shadow-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Contact Rishabh</h2>
+            <div class="max-w-xl mx-auto text-center">
+                <p class="text-lg text-text-light text-center mb-8">I'm currently available for new opportunities. Feel free to reach out directly via email or phone.</p>
+                <div class="bg-primary p-6 rounded-lg shadow-2xl border border-slate-700">
+                    <p class="text-2xl font-bold text-text-light mb-2">
+                        <!-- UPDATED EMAIL LINK -->
+                        <a id="email-link" href="mailto:yadavrishabhvinod@gmail.com" class="text-accent hover:underline break-words">yadavrishabhvinod@gmail.com</a>
+                    </p>
+                    <!-- ADDED PHONE NUMBER LINK -->
+                    <p class="text-xl font-bold text-text-light mb-6">
+                        <a id="phone-link" href="tel:+919769410785" class="text-text-light hover:text-accent transition duration-300">+91 9769410785</a>
+                    </p>
+                    <p class="text-text-muted mb-6">Click the button below to compose an email or the number above to call.</p>
+                    <!-- UPDATED EMAIL BUTTON -->
+                    <a id="email-button" href="mailto:yadavrishabhvinod@gmail.com?subject=Job%20Opportunity%20or%20Collaboration" class="inline-block w-full sm:w-auto px-10 py-3 text-lg font-medium text-primary bg-accent rounded-lg shadow-xl hover:bg-sky-300 transition duration-300 transform hover:scale-105">
+                        <span class="align-middle mr-2">📧</span>
+                        Compose Email
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary border-t border-slate-700 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-text-muted">
+            <p>&copy; 2024 Rishabh Yadav. All rights reserved.</p>
+            <p class="mt-2 text-sm">Built with Tailwind CSS.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Mobile Menu Toggle Functionality
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const openIcon = document.getElementById('menu-icon-open');
+            const closeIcon = document.getElementById('menu-icon-close');
+            
+            menuButton.addEventListener('click', () => {
+                const isExpanded = mobileMenu.classList.toggle('hidden');
+                openIcon.classList.toggle('hidden', !isExpanded);
+                closeIcon.classList.toggle('hidden', isExpanded);
+            });
+
+            // Close menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    openIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                });
+            });
+
+
+            // 2. Scroll Reveal Animation using IntersectionObserver
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Stop observing after it has been revealed once
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                // Trigger when 10% of the element is visible
+                threshold: 0.1, 
+                // Start trigger slightly below the viewport to ensure smooth transition
+                rootMargin: '0px 0px -10% 0px' 
+            });
+
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
