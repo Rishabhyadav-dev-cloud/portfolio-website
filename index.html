@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ************* SOCIAL MEDIA PREVIEW (LinkedIn, WhatsApp, FB, Twitter) ************* -->
+    <meta property="og:title" content="Rishabh Yadav - Software Developer & Azure Administrator">
+    <meta property="og:description" content="Explore my portfolio, skills, certifications, Azure projects, and contact details.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Rishabhyadav-dev-cloud/portfolio-website/main/preview.png.png">
+    <meta property="og:url" content="https://Rishabhyadav-dev-cloud.github.io/portfolio-website/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rishabh Yadav - Portfolio">
+    <meta name="twitter:description" content="Explore my complete portfolio website.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/Rishabhyadav-dev-cloud/portfolio-website/main/preview.png.png">
+
+    <title>Rishabh Yadav - Software Developer & Azure Administrator</title>
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Use Inter font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #38bdf8; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0ea5e9; }
+
+        @keyframes fadeInHero {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeInHero {
+            animation: fadeInHero 1s ease-out forwards;
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition-delay: 0.1s;
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0f172a',
+                        'secondary': '#1e293b',
+                        'accent': '#38bdf8',
+                        'text-light': '#f8fafc',
+                        'text-muted': '#94a3b8',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-primary text-text-light">
+
+    <!-- Navigation Bar (Sticky) -->
+    <header class="sticky top-0 z-50 bg-secondary/90 backdrop-blur-sm shadow-xl">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-accent">Rishabh Yadav</a>
+            <div class="space-x-8 hidden md:flex">
+                <a href="#about" class="text-text-muted hover:text-accent transition duration-300">About</a>
+                <a href="#skills" class="text-text-muted hover:text-accent transition duration-300">Skills</a>
+                <a href="#certs" class="text-text-muted hover:text-accent transition duration-300">Certifications</a>
+                <a href="#projects" class="text-text-muted hover:text-accent transition duration-300">Projects</a>
+                <a href="#education" class="text-text-muted hover:text-accent transition duration-300">Education</a>
+                <a href="#contact" class="text-text-muted hover:text-accent transition duration-300">Contact</a>
+            </div>
+
+            <button id="mobile-menu-button" class="md:hidden text-text-light focus:outline-none p-2 rounded-lg hover:bg-slate-700 transition">
+                <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base">Skills</a>
+                <a href="#certs" class="block px-3 py-2 rounded-md text-base">Certifications</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base">Projects</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base">Education</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- -------------- HERO SECTION -------------- -->
+        <section id="hero" class="py-20 sm:py-32 lg:py-40 text-center max-w-7xl mx-auto px-4">
+            <div class="animate-fadeInHero">
+                <h1 class="text-5xl sm:text-7xl font-extrabold mb-4">Hello, I'm <span class="text-accent">Rishabh Yadav</span></h1>
+                <p class="text-xl sm:text-3xl text-text-muted mb-8">Software Developer & Certified <span class="text-accent font-semibold">Azure Administrator</span></p>
+                <a href="#contact" class="px-8 py-3 text-lg font-medium bg-accent text-primary rounded-lg shadow-lg hover:bg-sky-300 transition">Get In Touch</a>
+            </div>
+        </section>
+
+        <!-- -------------- ABOUT ME -------------- -->
+        <section id="about" class="py-16 bg-secondary/50 rounded-lg max-w-7xl mx-auto px-4 mb-16 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-10 text-accent">About Me</h2>
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-lg mb-4">
+                    I am a <strong>software developer</strong> with a strong foundation in building reliable, scalable applications, complemented by hands-on experience in <strong>Azure administration</strong>.
+                </p>
+                <p class="text-lg">
+                    I enjoy working across development + cloud infrastructure to deliver modern and optimized business-focused solutions.
+                </p>
+            </div>
+        </section>
+
+        <!-- -------------- SKILLS -------------- -->
+        <section id="skills" class="py-16 max-w-7xl mx-auto px-4 mb-16">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent scroll-reveal">Technical Skills</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Software Dev -->
+                <div class="bg-secondary p-6 rounded-xl border-t-4 border-accent shadow-2xl scroll-reveal">
+                    <h3 class="text-2xl font-semibold mb-4 text-accent">Software Development</h3>
+                    <ul class="space-y-2">
+                        <li>● C#</li>
+                        <li>● Asp.Net MVC & Asp.Net Core</li>
+                        <li>● SQL Databases</li>
+                        <li>● API</li>
+                        <li>● Python</li>
+                    </ul>
+                </div>
+
+                <!-- Cloud -->
+                <div class="bg-secondary p-6 rounded-xl border-t-4 border-accent shadow-2xl scroll-reveal">
+                    <h3 class="text-2xl font-semibold mb-4 text-accent">Cloud & Infrastructure</h3>
+                    <ul class="space-y-2">
+                        <li>● Microsoft Azure (AZ-104 - In Progress)</li>
+                        <li>● Virtual Machines, VNETs, Storage</li>
+                        <li>● Azure App Service & Functions</li>
+                        <li>● Terraform</li>
+                    </ul>
+                </div>
+
+                <!-- DevOps -->
+                <div class="bg-secondary p-6 rounded-xl border-t-4 border-accent shadow-2xl scroll-reveal">
+                    <h3 class="text-2xl font-semibold mb-4 text-accent">DevOps & Security</h3>
+                    <ul class="space-y-2">
+                        <li>● Azure DevOps CI/CD</li>
+                        <li>● Docker & Kubernetes</li>
+                        <li>● Cloud Security (SC-900)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- -------------- CERTIFICATIONS -------------- -->
+        <section id="certs" class="py-16 bg-secondary rounded-lg max-w-7xl mx-auto px-4 mb-16">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent scroll-reveal">Certifications</h2>
+
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="w-60 p-4 bg-primary rounded-lg border border-accent text-center scroll-reveal">☁️
+                    <p class="text-xl font-semibold">AZ-900</p>
+                    <p class="text-sm text-text-muted">Azure Fundamentals</p>
+                </div>
+
+                <div class="w-60 p-4 bg-primary rounded-lg border border-accent text-center scroll-reveal">🔒
+                    <p class="text-xl font-semibold">SC-900</p>
+                    <p class="text-sm">Security, Compliance & Identity</p>
+                </div>
+
+                <div class="w-60 p-4 bg-primary rounded-lg border border-accent text-center scroll-reveal">🛠
+                    <p class="text-xl font-semibold">AZ-104</p>
+                    <p class="text-sm text-accent">In Progress</p>
+                </div>
+
+                <div class="w-60 p-4 bg-primary rounded-lg border border-accent text-center scroll-reveal">🛡
+                    <p class="text-xl font-semibold">Oracle Cloud</p>
+                    <p class="text-sm">OCI Foundations</p>
+                </div>
+
+                <div class="w-60 p-4 bg-primary rounded-lg border border-accent text-center scroll-reveal">🤖
+                    <p class="text-xl font-semibold">Oracle AI</p>
+                    <p class="text-sm">OCI AI Foundations</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- -------------- PROJECTS -------------- -->
+        <section id="projects" class="py-16 max-w-7xl mx-auto px-4 mb-16">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent scroll-reveal">Selected Projects</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="bg-secondary p-6 rounded-xl shadow-2xl scroll-reveal">
+                    <h3 class="text-2xl font-semibold mb-2">Scalable 3-Tier Azure Architecture</h3>
+                    <p>Built highly available web architecture with security, governance, DR, Azure Policy, NSGs, ASR, etc.</p>
+                </div>
+
+                <div class="bg-secondary p-6 rounded-xl shadow-2xl scroll-reveal">
+                    <h3 class="text-2xl font-semibold mb-2">Automated CI/CD for VMSS</h3>
+                    <p>Used GitHub Actions for automated builds and VMSS deployments.</p>
+                </div>
+
+                <div class="bg-secondary p-6 rounded-xl shadow-2xl scroll-reveal">
+                    <h3 class="text-2xl font-semibold mb-2">Azure DevTest Labs Automation</h3>
+                    <p>Setup DevTest Lab with automation, custom images, shutdown policies, cost optimization.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- -------------- EDUCATION -------------- -->
+        <section id="education" class="py-16 bg-secondary/50 rounded-lg max-w-7xl mx-auto px-4 mb-16 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Education</h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <div class="bg-primary p-6 rounded-xl shadow-xl border-l-4 border-accent">
+                    <h3 class="text-2xl font-semibold">Bachelor of Science (B.Sc.) in Computer Science</h3>
+                    <p class="text-text-muted">Dr. Bhimrao Ambedkar University, Agra</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- -------------- CONTACT -------------- -->
+        <section id="contact" class="py-16 bg-secondary/50 rounded-lg max-w-7xl mx-auto px-4 mb-16 scroll-reveal">
+            <h2 class="text-4xl font-bold text-center mb-12 text-accent">Contact Rishabh</h2>
+
+            <div class="max-w-xl mx-auto text-center">
+                <p class="text-lg text-text-light mb-8">I'm available for new opportunities.</p>
+
+                <div class="bg-primary p-6 rounded-lg shadow-2xl border border-slate-700">
+                    <p class="text-2xl font-bold">
+                        <a href="mailto:yadavrishabhvinod@gmail.com" class="text-accent">yadavrishabhvinod@gmail.com</a>
+                    </p>
+                    <p class="text-xl font-bold mb-6">
+                        <a href="tel:+919769410785" class="text-text-light">+91 9769410785</a>
+                    </p>
+
+                    <a href="mailto:yadavrishabhvinod@gmail.com?subject=Job%20Opportunity" class="px-10 py-3 text-lg bg-accent text-primary rounded-lg shadow-xl hover:bg-sky-300 transition">📧 Compose Email</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary border-t border-slate-700 py-8">
+        <div class="max-w-7xl mx-auto text-center text-text-muted">
+            <p>&copy; 2024 Rishabh Yadav. All rights reserved.</p>
+            <p class="text-sm mt-2">Built with Tailwind CSS.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const openIcon = document.getElementById('menu-icon-open');
+            const closeIcon = document.getElementById('menu-icon-close');
+
+            menuButton.addEventListener('click', () => {
+                const isExpanded = mobileMenu.classList.toggle('hidden');
+                openIcon.classList.toggle('hidden', !isExpanded);
+                closeIcon.classList.toggle('hidden', isExpanded);
+            });
+
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -10% 0px'
+            });
+
+            revealElements.forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body>
+</html>
